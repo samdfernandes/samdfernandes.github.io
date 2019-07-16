@@ -1,0 +1,84 @@
+/* 
+font-family: 'Open Sans Condensed', sans-serif; --> Headings
+font-family: 'Raleway', sans-serif; --> regular text 
+font-family: 'Poiret One', cursive; --> Logo
+*/
+
+body {
+    font-family: 'Raleway', sans-serif;
+}
+
+/* Nav */
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    background-color: gold;
+    width: 100%;
+}
+
+.links {
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+    width: 40%;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    margin: 2%;
+}
+
+a:hover {
+    text-decoration: none;
+    color: slateblue;
+}
+
+.logo {
+    font-family: 'Poiret One', cursive;
+    font-size: 2em;
+}
+
+/* jumbotron */
+
+.jumbotron {
+    width: 100%;
+    height: 25em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    background-color:#3083b3;
+    background-image: url(https://unitedhub-img.rbl.ms/simage/https%3A%2F%2Fassets.rbl.ms%2F8923836%2F1200x600.jpg/2000%2C2000/Lkm58zK8%2B1p9HdKl/img.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+form {
+     border-radius: 6px;
+}
+
+.text-box {
+    border-radius: 6px;
+    width: 20em;
+    padding: 2%
+}
+
+.submit-btn {
+    border-radius: 6px;
+    background-color: slateblue;
+    color: white;
+}
+
+/* teaser Section */
+
+.bottom {
+
+}
+
+.teaser {
+    font-family: 'Open Sans Condensed', sans-serif;
+}
