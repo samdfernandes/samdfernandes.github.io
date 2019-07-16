@@ -28,8 +28,44 @@
     <div class="jumbotron">
         <form>
             <input class="text-box" type="text" placeholder="what city would you like to explore?">
-            <input class="submit-btn" type="submit">
+            <button class="submit-btn" type="submit">Submit</button>
         </form>
+    </div>
+    <!-- PlaceHolder for appending info about selected cities -->
+    
+    
+    <div id='city-section' class='hidden'>
+        
+        <div class="city-info column1 hidden">
+            <!-- insert map with coordinates from API -->
+            <iframe class='map'
+            width="400" 
+            height="300" 
+            frameborder="0" 
+            scrolling="no" 
+            marginheight="0" 
+            marginwidth="0" 
+            src="https://maps.google.com/maps?q=42.35843,-71.05977&hl=es;z=14&amp;output=embed">
+            </iframe>
+        </div>
+
+        <div class="city-info column2 hidden">
+            <!-- insert scores data from API -->
+            <div class='column2-text'>
+                    <h3 >City Scores</h3>
+            </div>
+            <div class='scores'>
+                <p class='housing'>Housing: 8/10</p>
+                <p class='startup'>Starup Scene: 7/10</p>
+                <p class='cost-of-living'>Cost of Living: 7/10</p>
+                <p class='safety'>Safety: 8/10</p>
+                <p class='education'>Education: 6/10</p>
+                <p class='Healthcare'>Healthcare: 8/10</p>
+                <p class='Economy'>Economy: 6/10</p>
+            </div>
+
+        </div>
+
     </div>
 
     <!-- Teaser Section -->
@@ -47,6 +83,12 @@
     </div>
     
     <!-- Script Sources -->
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+
+  <script src="../javascript/app.js"></script>
 
 
 </body>
