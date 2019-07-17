@@ -31,39 +31,35 @@
             <button class="submit-btn" type="submit">Submit</button>
         </form>
     </div>
-    <!-- PlaceHolder for appending info about selected cities -->
+
+    <div id="title">
+        <!-- placeholder for city title -->
+
+    </div>
     
+    <div id="city-scores">
+            <!-- insert scores data from API -->
+
+    </div>
     
-    <div id='city-section' class='hidden'>
+    <div id='city-section-layer1' class='hidden'>
+
         
-        <div class="city-info column1 hidden">
+        <div id='map' class="city-map-layer2">
             <!-- insert map with coordinates from API -->
-            <iframe class='map'
+            <iframe class='map' 
             width="400" 
             height="300" 
             frameborder="0" 
             scrolling="no" 
             marginheight="0" 
             marginwidth="0" 
-            src="https://maps.google.com/maps?q=42.35843,-71.05977&hl=es;z=14&amp;output=embed">
+            src="https://maps.google.com/maps?q=40.71427,-74.00597&hl=es;z=14&amp;output=embed">
             </iframe>
         </div>
 
-        <div class="city-info column2 hidden">
-            <!-- insert scores data from API -->
-            <div class='column2-text'>
-                    <h3 >City Scores</h3>
-            </div>
-            <div class='scores'>
-                <p class='housing'>Housing: 8/10</p>
-                <p class='startup'>Starup Scene: 7/10</p>
-                <p class='cost-of-living'>Cost of Living: 7/10</p>
-                <p class='safety'>Safety: 8/10</p>
-                <p class='education'>Education: 6/10</p>
-                <p class='Healthcare'>Healthcare: 8/10</p>
-                <p class='Economy'>Economy: 6/10</p>
-            </div>
-
+        <div class='more'>
+            placeholder
         </div>
 
     </div>
