@@ -77,28 +77,40 @@ form {
      border-radius: 6px;
      width: 100%;
      display: flex;
-     flex-direction: column;
      justify-content: center;
      align-items: center;
 }
 
 
 .text-box {
-    border-radius: 6px;
-    width: 300px;
-    padding: 2%;
-    font-size: 1em;
-    margin: 2%
+    border-radius: 6px 0 0 6px;
+    border: 1px solid black;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+    width: 350px;
+    padding: 1%;
+    font-size: 20px;
+    margin: 0;
 }
 
 .submit-btn {
-    border-radius: 6px;
+    border-radius: 0 6px 6px 0;
     background-color: slateblue;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
     color: white;
     font-size: 1em;
-    padding: 6px;
+    padding: 1%;
     width: 100px;
-    text-align: center
+    text-align: center;
+    transition: background-color 250ms ease-in-out, 
+                transform 150ms ease;
+}
+
+.submit-btn img {
+    height: 20px;
 }
 
 .submit-btn:hover{
