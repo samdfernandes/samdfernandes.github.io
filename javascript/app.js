@@ -41,8 +41,8 @@ const geoLink = myData['_links']['city:item']['href'] //retrieves geographical i
         $('#map').empty()
         $('#map').html(
        `     <iframe class='map' 
-            width="400" 
-            height="400" 
+            width="370" 
+            height="400"     
             frameborder="0" 
             scrolling="no" 
             marginheight="0" 
@@ -115,7 +115,7 @@ const geoLink = myData['_links']['city:item']['href'] //retrieves geographical i
                 $(`#scoreDiv${i}`).append($p2)
             }
 
-            let $sectionName = $('<h3>')
+            let $sectionName = $('<h4>')
             $sectionName.text('City Ratings')
             $("#city-scores").prepend($sectionName)
          
@@ -133,7 +133,7 @@ $.ajax({url: geoLink}).then(useGeoData)
 
 $('.submit-btn').on('click', (event) =>{
     event.preventDefault();
-
+    $('#city-section').removeClass('hidden')
     $('#title').empty();
     $('#city-scores').empty();
     const city = $('.text-box').val().toLowerCase();
@@ -142,5 +142,9 @@ $('.submit-btn').on('click', (event) =>{
     const endpoint = `https://api.teleport.org/api/cities/?search=${city}&limit=1`
     $.ajax({url: endpoint}).then(handleData)
 
+})
+
+$('#home').on('click', ()=>{
+    location.reload() // learned how to reload the page from stackoverflow
 })
 

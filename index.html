@@ -7,7 +7,7 @@
     <title>CityLife</title>
 
     <!-- Styling links -->
-    <link rel="stylesheet" href="../css/reset.css">
+    <!-- <link rel="stylesheet" href="../css/reset.css"> -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700|Poiret+One|Raleway:400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/styles.css">
 
@@ -17,9 +17,7 @@
     <!-- Top Nav & Logo -->
     <div class="navigation">
         <div class="links">
-                <a href="#">Home</a>
-                <a href="#">About</a>
-                <a href="#">Beta</a>        
+                <a href="#home" id='home'>Home</a>     
         </div>
         <div class="logo"><span>CityLife</span></div>
 
@@ -33,24 +31,21 @@
         </form>
     </div>
 
-    <div id="title">
-        <!-- placeholder for city title -->
+    <!-- City Info Section -->
+    <div id="city-section" class='container hidden'>
+        <div id="title">
+            <!-- placeholder for city title inserted with Jquery & Ajax-->
+        </div>
 
-    </div>
-    
-    <div id="city-scores">
-            <!-- insert scores data from API -->
+        <div id="city-scores">
+            <!-- placeholder for scores data from API -->
+        </div>
 
-    </div>
-    
-    <div id='city-section-layer1' class='hidden'>
-
-        
-        <div id='map' class="city-map-layer2">
+        <div id='map' class="city-map">
             <!-- insert map with coordinates from API -->
             <iframe class='map' 
-            width="400" 
-            height="300" 
+            width="350" 
+            height="400" 
             frameborder="0" 
             scrolling="no" 
             marginheight="0" 
@@ -59,25 +54,12 @@
             </iframe>
         </div>
 
-        <div class='more'>
+        <!-- <div class='more'>
             placeholder
-        </div>
-
+        </div> -->
+        
     </div>
-
-    <!-- Teaser Section -->
-
-    <div class="bottom">
-        <div class="teaser">
-            <p>New York City</p>
-        </div>
-        <div class="teaser">
-            <p>San Francisco</p>
-        </div>
-        <div class="teaser">
-            <p>Miami</p>
-        </div>
-    </div>
+   
     
     <!-- Script Sources -->
     <script
