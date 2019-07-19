@@ -3,29 +3,58 @@
 
 const handleData = (data) => {
 
-    console.log(`Data results: ${data}`);
+    console.log(data);
     
     
-let myData = data._embedded['city:search-results'][0];
-let cityName = myData.matching_full_name; //find the city Name in the returned object
+    let myData = data._embedded['city:search-results'][0];
+    let cityName = myData.matching_full_name; //find the city Name in the returned object
 
-const $cityTitle = $('<h2>');
-$cityTitle.text(cityName) //prints the city name on the webpage
+    const $cityTitle = $('<h2>');
+    $cityTitle.text(cityName) //prints the city name on the webpage
 
-$('#city-section').removeClass('hidden')
-$('#title').append($cityTitle);
+    $('#city-section').removeClass('hidden')
+    $('#title').append($cityTitle);
 
-const geoLink = myData['_links']['city:item']['href'] //retrieves geographical information needed for additional api
+    const geoLink = myData['_links']['city:item']['href'] //retrieves geographical information needed for additional api
 
     //////////////////////////////////////////////////////////////////////
     ////// FETCHING GEODATA INFORMATION TO DISPLAY OTHER DETAILS /////////
     //////////////////////////////////////////////////////////////////////
 
     const useGeoData = (geodata) => {
+
+        ///establish an if statement for the case that there may not be a city:urban_area field.
+
+        if(geodata._links['city:urban_area'] === undefined) {
+            console.log('yup, it is undefined...');
+            
+            const $urban = $('<p>')
+            $urban.html(`There currently is no information available for ${cityName}. <br><br>Try looking for a bigger city nearby to get some interesting insight.`)
+          
+            $('#title').append($urban)
+
+            const $scores = $('<h4>')
+            $scores.text('City Scores')
+
+            $('#city-scores').append($scores)
+
+            const $scoresExcuse = $('<p>')
+            $scoresExcuse.html(`Again, sorry, there is no scores data for ${cityName}`)
+
+            $scoresExcuse.css('font-size', '.85em')
+
+            $('#city-scores').append($scoresExcuse)
+
+
+        }
+     
+       
+
         let urban_areaLink = geodata._links['city:urban_area']['href'] //find the nearest urban area to display info
         let urbanAreaName = geodata._links['city:urban_area']['name']
 
-        console.log(geodata);
+        
+
 
         // console.log(urban_areaLink);
         // console.log(`${urban_areaLink}images`);
@@ -39,7 +68,7 @@ const geoLink = myData['_links']['city:item']['href'] //retrieves geographical i
         console.log(`lat is ${lat} lon is ${lon}`);
 
         $('#map').empty()
-        $('#map').html(
+        $('#map').html( /// map stretch goal: accomplished! wooohoooo!
        `     <iframe class='map' 
             width="370" 
             height="400"     
@@ -49,10 +78,12 @@ const geoLink = myData['_links']['city:item']['href'] //retrieves geographical i
             marginwidth="0" 
             src='https://maps.google.com/maps?q=${lat},${lon}&hl=es;z=18&amp;output=embed'>
             </iframe>`)
-
-        /// --> saving this information for a strech goal to display map later ///
-
+         
+    
+        ///////////////////////////////////////////////
         ////// DISPLAYING IMAGES //////////////////////
+        ///////////////////////////////////////////////
+
         const displayImages = (imageData) => {
         const cityImage = imageData.photos[0]['image']['web'];
         console.log(imageData);
@@ -68,6 +99,7 @@ const geoLink = myData['_links']['city:item']['href'] //retrieves geographical i
             // console.log(scoreData);
 
             const $citySummary = $(scoreData.summary);
+            
             const $urban = $('<p>')
             $urban.text(`${cityName} is part of the ${urbanAreaName} urban area.`)
             
@@ -96,7 +128,7 @@ const geoLink = myData['_links']['city:item']['href'] //retrieves geographical i
 
                 
                 const $bar = $('<div>') //gray bar to style
-                $bar.css('width', '100px')
+                $bar.css('min-width', '100px')
                 $bar.css('height', '14px')
                 $bar.css('border', '1px solid black')
                 $bar.css('position', 'relative')
@@ -123,7 +155,7 @@ const geoLink = myData['_links']['city:item']['href'] //retrieves geographical i
     
         $.ajax({url: `${urban_areaLink}scores`}).then(displayScores)
         $.ajax({url: `${urban_areaLink}images`}).then(displayImages)
-
+    
     }
 $.ajax({url: geoLink}).then(useGeoData) 
 
@@ -148,3 +180,50 @@ $('#home').on('click', ()=>{
     location.reload() // learned how to reload the page from stackoverflow
 })
 
+$('#about').on('click', ()=> {
+    $('#modal').css('display','block')
+})
+
+$('button').on('click', () => {
+    $('#modal').css('display','none')
+})
+
+// $(window).on("resize",function(){  
+    
+//     if($(window).width() < 736){
+//         const $hamb = $('<img>')
+//         $hamb.attr('src','../images/menu.svg')
+//         $hamb.addClass('hamburger')
+//         $('.links').empty();
+//         $('.links').append($hamb);
+//      }   
+//     else if ($(window).width() > 736) {
+//         $('.links').empty();
+//         const $homeLink = $('<a>')
+//         const $aboutLink = $('<a>')
+//         $homeLink.text('Home');
+//         $aboutLink.text('About');
+//         $homeLink.attr('href', '#home')
+//         $homeLink.attr('id', 'home')
+//         $aboutLink.attr('id','about')
+//         $('.links').append($homeLink)
+//         $('.links').append($aboutLink)
+//     }
+//  })
+
+//  if($(window).width() < 736){
+//     const $hamb = $('<img>')
+//     $hamb.attr('src','../images/menu.svg')
+//     $hamb.addClass('hamburger')
+//     $('.links').empty();
+//     $('.links').append($hamb);
+// }    
+
+// $('.hamburger').on('click', ()=>{
+//     if($('#menu').css('display') === 'none'){
+//     $('#menu').css('display','block')
+//     }
+//     else {
+//     $('#menu').css('display','none')
+//     }
+// })

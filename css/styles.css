@@ -20,7 +20,9 @@ h3 {
     font-family: 'Open Sans Condensed', sans-serif;
 }
 
-/* Nav */
+/* /////////////// */
+/* //Nav////////// */
+/* /////////////// */
 
 .navigation {
     display: flex;
@@ -49,6 +51,11 @@ a:hover {
     color: slateblue;
 }
 
+/* .hamburger {
+    height: 35px;
+    margin: 10px;
+} */
+
 .logo {
     font-family: 'Poiret One', cursive;
     font-size: 2em;
@@ -57,8 +64,9 @@ a:hover {
     border-radius: 4px;
 
 }
-
-/* Main Section */
+/* /////////////////// */
+/* //Main Section///// */
+/* /////////////////// */
 
 .jumbotron {
     /* width: 100%; */
@@ -93,6 +101,7 @@ form {
     width: 350px;
     font-size: 20px;
     margin: 0;
+    transition: width 1s; /* Resizing of input text box with device width */
 }
 
 .submit-btn {
@@ -103,6 +112,7 @@ form {
     font-size: 1em;
     width: 100px;
     text-align: center;
+    transition: width 1s
 }
 
 .submit-btn img {
@@ -112,7 +122,53 @@ form {
 .submit-btn:hover{
     background-color:gold;
 }
+/* /////////// */
+/* //Modal//// */
+/* /////////// */
 
+#modal {
+    display: none;
+    background-color: rgba(0,0,0,0.3);
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+#modal-textbox {
+    margin: 30px auto;
+    background-color: white;
+    height: 300px;
+    width: 350px;
+    padding: 2%;
+    text-align: justify;
+    border-radius: 3px;
+    box-shadow: 0 2px 2px rgba(0,0,0,0.1);
+    overflow: scroll
+}
+
+.credit {
+    font-size: .8em;
+}
+
+#modal-textbox  a {
+    color: slateblue;
+    font-weight: bold;
+}
+
+button {
+    padding: 1%;
+    background-color: gold;
+    width: 98%;
+    font-size: 1em;
+}
+
+button:hover {
+    background-color: slateblue;
+    color: white;
+}
 
 /* City Section */
 
@@ -131,6 +187,7 @@ form {
     box-shadow: 5px 5px 30px gray;
     padding: 2%;
 }
+
 
 #title {
     font-size: .9em;
@@ -155,11 +212,12 @@ form {
 }
 
 .scores > p {
-    width: 200px;
+    width: 140px;
+    font-size: .8em;
 }
 
 .scores p {
-    margin: 0 5px;
+    margin: 2px 5px;
 }
 
 #city-section-layer1 {
@@ -171,3 +229,102 @@ form {
 .hidden {
     display: none;
 }
+
+.footer {
+    margin: 20px auto;
+    color: gray;
+    width: 80%;
+    font-size: .5em;
+    text-align: center;
+}
+
+.footer a {
+    color: slateblue
+}
+
+.footer a:hover {
+    color: gold;
+    font-weight: bold;
+}
+
+/* Small devices (iPhone in portrait mode) */
+@media (max-width: 375px) {
+    .text-box, .submit-btn {
+        padding: 1%;
+    }
+
+    .text-box {
+        width: 170px;
+        font-size: 15px;
+    }
+    
+    .submit-btn {
+        width: 30px;
+    }
+
+    .submit-btn img {
+        height: 8px;
+    }
+
+    #title, #city-scores , #map {
+        width: 375px;
+        margin: 15px 5px;
+    }
+
+    #title, #city-scores {
+        min-width: 300px;
+        max-width: 300px;
+        height: 500px;
+    }
+
+    iframe {
+        width: 300px;
+    }
+
+}
+
+/* Small devices (iPhone in landscape mode) */
+@media (max-width: 576px) {
+    .text-box, .submit-btn {
+        padding: 1%;
+    }
+
+    .text-box {
+        width: 170px;
+        font-size: 15px;
+    }
+    
+    .submit-btn {
+        width: 30px;
+    }
+
+    .submit-btn img {
+        height: 8px;
+    }
+
+    #title, #city-scores , #map {
+        width: 375px;
+        margin: 15px 5px;
+        padding: 5%;
+    }
+
+    #title, #city-scores {
+        min-width: 300px;
+        max-width: 300px;
+        height: 500px;
+    }
+
+    #map {
+        max-width: 310px;
+    }
+
+    iframe {
+        width: 300px;
+    }
+}
+
+/* Medium devices and up (tablets, 768px and up) */
+@media (min-width: 768px) {
+
+}
+
