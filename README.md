@@ -4,8 +4,6 @@ Website that has relevant city data for anyone interested
 ## CityLife 
 CityLife is a web application that makes use of the [Teleport API](https://developers.teleport.org/api/) to display information on measured data for mig metropolitan areas world-wide.
 
-My approach for this project was to use the data available on the API to gather scores on quality of life in the cities searched by the user.
-
 My goals with the building of the site were:
 1. a user would type in a city name and press search
 2. it should show information on the city
@@ -15,12 +13,15 @@ My goals with the building of the site were:
 
 Strech goals
 1. adding a map to show the city - accomplished
-2. adding nice stying to my scores info - accomplished
+2. adding nice stying to city scores info - accomplished
 3. adding touristic info on the city - not attempted. Could not find a free API that doesn't involve advanced features I don't know yet
 
 You can see the live site [here](https://samdfernandes.github.io/)
 
-### Instalation instructions:
+## Technologies Used:
+HTML, CSS, JavaScript, JQuery, AJAX
+
+### Approach:
 I started by creating the HTML and CSS files with a text input field and a submit button to display information on the searched city.
 
 Next I examined the data to find out where to go to access the city name, and display it to the page.
