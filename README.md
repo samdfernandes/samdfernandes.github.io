@@ -53,7 +53,7 @@ I realized I needed to add some CSS functionality to my site so I used a modal b
 
 I used code inspired by our class exemple.
 
-** CSS Goal 2: make it responsive**
+**CSS Goal 2: make it responsive**
 
 I made the mistake of *not* designing it for the smaller screen, so I had to go back and make my cards a bit smaller and adjust some fonts/widths/margins to small screens. Done.
 
