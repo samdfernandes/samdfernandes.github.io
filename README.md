@@ -35,7 +35,7 @@ After some soul searching I gathered that column charts where a good way to show
 
 The bigger challenge was figuring out how to use flexbox, margins, min/max-width to display every piece neatly, inside a card on any width display. Phew. This took several tries, playing around with those properties until I found the right ratio. 
 
-** Stretch goal 2: accomplished**
+**Stretch goal 2: accomplished**
 
 The other thing I though would be nice to show along with the cards for the summary and the scores, was a map with the location of the page. 
 
@@ -47,7 +47,7 @@ Changing the location proved difficult as google will prevent you from refreshin
 
 My work around was using jquery to add the whole html for the map to the page, along with the other information I was using about the city. The map is my third and final card.
 
-** CSS goal: Modal**
+**CSS goal: Modal**
 
 I realized I needed to add some CSS functionality to my site so I used a modal box with the about information on my nav bar.
 
@@ -57,11 +57,11 @@ I used code inspired by our class exemple.
 
 I made the mistake of *not* designing it for the smaller screen, so I had to go back and make my cards a bit smaller and adjust some fonts/widths/margins to small screens. Done.
 
-** CSS more! Modal was too easy**
+**CSS more! Modal was too easy**
 
 I used a transition property to smooth out the transition I was seeing on my resizing of the input text box. In smaller screens, my text box needs to be much smaller to still look pretty.
 
-** CSS goal fail: toggle navigation menu**
+**CSS goal fail: toggle navigation menu**
 
 On Friday afternoon I tried to add one more functionality as my site was otherwise done. I made an attempt to add a nav icon for when the page got to a certain width, but had no luck with that. I found on google an option to use $(window).on(resize, function...) to grab the resizing event and was able to successfully switch the nav links for an img. 
 
